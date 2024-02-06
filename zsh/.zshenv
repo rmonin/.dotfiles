@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh 
 # ----------------------------------------------------------------------
-# Zsh Environment Configuration: ---------------------------------------
+# Zsh Environment Configuration:
 # ----------------------------------------------------------------------
 # ----------------------------------------------------------------------
 # Zsh Environment Configuration: This file is executed every time Zsh
