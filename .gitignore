@@ -14,8 +14,9 @@
 !.github
 
 
-# Git & GitHub internal needs ------------------------------------------
+# Meta & Common --------------------------------------------------------
 # ----------------------------------------------------------------------
+!aliases
 !LICENSE
 !makefile
 !README.md
@@ -29,4 +30,5 @@
 !zsh/.config
 !zsh/.config/zsh
 !zsh/.config/zsh/.zprofile
+!zsh/.config/zsh/.zshrc
 !zsh/.zshenv
