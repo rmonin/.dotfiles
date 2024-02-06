@@ -11,12 +11,12 @@
 
 # Oh my Zsh settings ---------------------------------------------------
 # ----------------------------------------------------------------------
-ZSH_THEME=bira                        # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME='bira'                      # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 DISABLE_UNTRACKED_FILES_DIRTY=true    # Disable marking untracked files under VCS as dirty
-DISABLE_AUTO_TITLE=true
-ZSH_CUSTOM=${ZSH}-custom
+ZSH_COMPDUMP="${ZSH_CACHE_DIR}/.zcompdump"
+ZSH_CUSTOM="${ZSH}-custom"
 COMPLETION_WAITING_DOTS=true          # Print dots to indicate that Zsh is still processing a completion request
-HIST_STAMPS="%y%m%d %H:%M"
+HIST_STAMPS='%y%m%d %H:%M'
 plugins=(                             # Which plugins would you like to load?
     git                               # Standard plugins can be found in $ZSH/plugins/
     colored-man-pages                 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -27,9 +27,9 @@ zstyle ':omz:update' mode auto        # Update automatically without asking
 # zstyle ':omz:*' aliases no          # Skip all aliases, in libs, plugins, and themes files and enabled plugins
 zstyle ':omz:lib:misc' aliases no     # Skip aliases proved by misc library
 zstyle ':omz:plugins:git' aliases no  # Remove unwated aliases provided by oh-my-zsh 
-source $ZSH/oh-my-zsh.sh
+source "${ZSH}/oh-my-zsh.sh"
 
 
 # Load Own Aliases -----------------------------------------------------
 # ----------------------------------------------------------------------
-source $DOTFILES/aliases              # For a full list of active aliases, run `alias`
+source "${DOTFILES}/aliases"              # For a full list of active aliases, run `alias`
