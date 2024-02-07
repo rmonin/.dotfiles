@@ -2,9 +2,8 @@
 # ----------------------------------------------------------------------
 # Zsh Environment Configuration:
 # ----------------------------------------------------------------------
-# ----------------------------------------------------------------------
-# This file is executed every time Zsh starts to initialize environment
-# variables and basic settings.
+# Executed every time Zsh starts to initialize environment variables and
+# basic settings.
 # ----------------------------------------------------------------------
 
 # Misc.

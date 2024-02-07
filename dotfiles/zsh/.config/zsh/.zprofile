@@ -2,8 +2,7 @@
 # ----------------------------------------------------------------------
 # Zsh Profile Configuration:
 # ----------------------------------------------------------------------
-# This file is executed once for each login shell before the shell
-# session starts.
+# Executed once for each login shell before the shell session starts.
 # It's used for setting up environment variables and running commands
 # that should be executed at login.
 # ----------------------------------------------------------------------

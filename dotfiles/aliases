@@ -2,9 +2,8 @@
 # ----------------------------------------------------------------------
 # Shell Aliases Configuration:
 # ----------------------------------------------------------------------
-# ----------------------------------------------------------------------
-# This file contains custom aliases that provide shortcuts for commonly
-# used commands or command sequences.
+# Contains custom aliases that provide shortcuts for commonly used
+# commands or command sequences.
 # ----------------------------------------------------------------------
 
 # Act
@@ -15,6 +14,3 @@ alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
 alias lr='ls - lrah'
-
-# Grep
-alias grep='grep -i --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}'

@@ -2,7 +2,7 @@
 # ----------------------------------------------------------------------
 # Zsh Configuration File:
 # ----------------------------------------------------------------------
-# This file is executed once for each interactive shell session.
+# Executed once for each interactive shell session.
 # It's used for setting up aliases, functions, and other customizations
 # specific to your shell environment.
 # ----------------------------------------------------------------------
@@ -14,12 +14,13 @@ plugins=(                                       # Standard plugins can be found 
     extract
 )
 ZSH_THEME='bira-lite'                           # https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_CUSTOM="${ZSH}-custom"                      # https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#zsh_custom
+ZSH_CUSTOM="${ZSH}.custom"                      # https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#zsh_custom
 COMPLETION_WAITING_DOTS=true                    # Print dots to indicate that Zsh is still processing a completion request
 CASE_SENSITIVE=false
 HYPHEN_INSENSITIVE=false
 DISABLE_AUTO_TITLE=true
 DISABLE_UNTRACKED_FILES_DIRTY=true              # Disable marking untracked files under VCS as dirty
+ENABLE_CORRECTION=true
 HIST_STAMPS='%y%m%d %H:%M'
 if [[ -n ${XDG_CACHE_HOME} ]]; then             # https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#zsh_cache_dir
     ZSH_CACHE_DIR="${XDG_CACHE_HOME}/ohmyzsh"   # We only change cache folder if dedicated cache is enabled
@@ -32,7 +33,8 @@ zstyle ':omz:lib:misc' aliases no
 zstyle ':omz:plugins:git' aliases no
 zstyle ':omz:update' frequency 7
 zstyle ':omz:update' mode auto
+zstyle ':omz:update' verbose default
 source "${ZSH}/oh-my-zsh.sh"
 
 # Load Aliases
-source "${DOTFILES}/aliases"                    # For a full list of active aliases, run `alias`
+#source "${DOTFILES}/aliases"                    # For a full list of active aliases, run `alias`
