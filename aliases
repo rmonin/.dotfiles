@@ -7,20 +7,14 @@
 # used commands or command sequences.
 # ----------------------------------------------------------------------
 
-
 # Act
-# ----------------------------------------------------------------------
 alias act='act --container-architecture linux/amd64'
 
-
 # Filesystem operation
-# ----------------------------------------------------------------------
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
 alias lr='ls - lrah'
 
-
 # Grep
-# ----------------------------------------------------------------------
 alias grep='grep -i --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,.idea,.tox}'

@@ -1,31 +1,18 @@
-# ----------------------------------------------------------------------
 # .gitignore
 # ----------------------------------------------------------------------
-# This .gitignore file ignores all files and directories by default,
-# with exceptions added for specific files that need to be tracked by
-# Git.
+# Ignores all files and directories by default, with exceptions added
+# for specific files that need to be tracked by Git.
 # ----------------------------------------------------------------------
 
 *
 
-# Git & GitHub internal needs ------------------------------------------
-# ----------------------------------------------------------------------
-!.gitignore
-!.github
-
-
-# Meta & Common --------------------------------------------------------
-# ----------------------------------------------------------------------
+# Meta & Common
 !aliases
 !LICENSE
 !makefile
 !README.md
 
-
-# Packages -------------------------------------------------------------
-# ----------------------------------------------------------------------
-
-# Zsh
+# Zsh Package
 !zsh
 !zsh/.config
 !zsh/.config/zsh
