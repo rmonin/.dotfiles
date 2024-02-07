@@ -18,4 +18,7 @@
 !zsh/.config/zsh
 !zsh/.config/zsh/.zprofile
 !zsh/.config/zsh/.zshrc
+!zsh/.config/zsh/ohmyzsh-custom
+!zsh/.config/zsh/ohmyzsh-custom/themes
+!zsh/.config/zsh/ohmyzsh-custom/themes/*
 !zsh/.zshenv

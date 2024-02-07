@@ -13,7 +13,7 @@ plugins=(                                       # Standard plugins can be found 
     colored-man-pages
     extract
 )
-ZSH_THEME='bira'                                # https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME='bira-rmm'                                # https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_CUSTOM="${ZSH}-custom"                      # https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#zsh_custom
 COMPLETION_WAITING_DOTS=true                    # Print dots to indicate that Zsh is still processing a completion request
 CASE_SENSITIVE=false
