@@ -8,4 +8,11 @@
 # ----------------------------------------------------------------------
 
 # Homebrew Setup
-eval "$(/opt/homebrew/bin/brew shellenv)"
+if (( ! $+commands[brew] )); then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+# https://github.com/nvbn/thefuck
+if (( ! $+commands[fuck] )); then
+    eval $(thefuck --alias)
+fi

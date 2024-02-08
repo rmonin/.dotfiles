@@ -9,8 +9,16 @@
 # Act
 alias act='act --container-architecture linux/amd64'
 
+# dmesg
+alias wtf='sudo dmesg | less'
+alias yolo='commit -m "$(curl -s https://whatthecommit.com/index.txt)"'
+
 # Filesystem operation
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
 alias lr='ls - lrah'
+alias ldot='ls -ld .*' 
+
+# VSCodium
+alias c='codium'
