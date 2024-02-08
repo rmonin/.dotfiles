@@ -38,7 +38,7 @@ DOTFILES="${HOME}/.dotfiles"
 ZSH="${XDG_CONFIG_HOME}/ohmyzsh"                # Path to the Oh My Zsh repository folder
 KEEP_ZSHRC='yes'                                # 'yes' means the ohmyzsh installer will not replace an existing .zshrc
 plugins=(                                       # Standard plugins can be found in $ZSH/plugins/
-    # asdf                                      # Custom plugins may be added to $ZSH_CUSTOM/plugins/
+    asdf                                        # Custom plugins may be added to $ZSH_CUSTOM/plugins/
     # autoenv
     colored-man-pages
     extract
