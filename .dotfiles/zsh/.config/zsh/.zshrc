@@ -7,10 +7,28 @@
 # specific to your shell environment.
 # ----------------------------------------------------------------------
 
+# HISTFILE is used by interactive shells only. Plus,
+# non-interactive shells & external commands don't need this var.
+# Hence, we put it in your .zshrc file, since that's sourced for
+# each interactive shell, and don't export it.
+HISTFILE="${XDG_STATE_HOME}/zsh/history"
+HISTSIZE=10000                                  # Maximum events for internal history
+SAVEHIST=10000                                  # Maximum events in history file
+
+# Only vars used by external commands or non-interactive sub
+# shells need to be exported. Note that you can export vars
+# without assigning values to them.
+export XDG_CONFIG_HOME XDG_STATE_HOME
+export XDG_CACHE_HOME="${HOME}/.cache"
+export XDG_DATA_HOME="${HOME}/.local/share"
+export EDITOR=vim VISUAL=view
+
 # Oh my Zsh settings
+ZSH="${XDG_CONFIG_HOME}/ohmyzsh"                # Path to the Oh My Zsh repository folder
+KEEP_ZSHRC='yes'                                # 'yes' means the ohmyzsh installer will not replace an existing .zshrc
 plugins=(                                       # Standard plugins can be found in $ZSH/plugins/
-    asdf                                        # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-    autoenv
+    # asdf                                      # Custom plugins may be added to $ZSH_CUSTOM/plugins/
+    # autoenv
     colored-man-pages
     extract
     git
@@ -19,7 +37,7 @@ plugins=(                                       # Standard plugins can be found 
     web-search
 )
 ZSH_THEME='bira-lite'                           # https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_CUSTOM="${ZSH}.custom"                      # https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#zsh_custom
+ZSH_CUSTOM="${ZSH}_custom"                      # https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#zsh_custom
 COMPLETION_WAITING_DOTS=true                    # Print dots to indicate that Zsh is still processing a completion request
 CASE_SENSITIVE=false
 HYPHEN_INSENSITIVE=false

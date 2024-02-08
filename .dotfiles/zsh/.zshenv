@@ -4,41 +4,15 @@
 # ----------------------------------------------------------------------
 # Executed every time Zsh starts to initialize environment variables and
 # basic settings.
+# No need to export anything here, as .zshenv is sourced for 
+# _every_ shell (unless invoked with `zsh -f`).
 # ----------------------------------------------------------------------
 
-# Misc.
-export DOTFILES="${HOME}/.dotfiles"
-export WORKSPACE="${HOME}/workspace"
-export LANG='en_US.UTF-8'
+# Assign these only if they don't have value yet. 
+: ${XDG_CONFIG_HOME:=$HOME/.config}
+: ${XDG_STATE_HOME:=~/.local/state}
 
-# XDG
-export XDG_CONFIG_HOME="${HOME}/.config"
-export XDG_DATA_HOME="${XDG_CONFIG_HOME}/local/share"
-export XDG_CACHE_HOME="${XDG_CONFIG_HOME}/cache"
+# Set $ZDOTDIR here to be able to store your other Zsh dotfiles 
+ZDOTDIR=${XDG_CONFIG_HOME}/zsh
 
-# Editor
-export EDITOR='vim'
-export VISUAL='view'
-
-# Zsh
-export ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
-export HISTFILE="${ZDOTDIR}/.zhistory"   # History filepath
-export HISTSIZE=10000                    # Maximum events for internal history
-export SAVEHIST=10000                    # Maximum events in history file
-
-# Oh my zsh
-export ZSH="${ZDOTDIR}/ohmyzsh"          # Path to the Oh My Zsh repository folder
-export KEEP_ZSHRC='yes'                  # 'yes' means the ohmyzsh installer will not replace an existing .zshrc
-
-
-# ASDF
-export ASDF_CONFIG_FILE=${XDG_CONFIG_HOME}/asdf/.asdfrc
-
-
-# NPM
-export NPM_PATH="${XDG_CONFIG_HOME}/node_modules"
-export NPM_BIN="${XDG_CONFIG_HOME}/node_modules/bin"
-export NPM_CONFIG_PREFIX="${XDG_CONFIG_HOME}/node_modules"
-
-# PATH
-export PATH="${NPM_BIN}:${PATH}"          # NPM
+SHELL_SESSIONS_DISABLE=1
