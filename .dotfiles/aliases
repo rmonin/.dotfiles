@@ -20,7 +20,7 @@ alias lr='ls - lrah'
 alias ldot='ls -ld .*' 
 
 # Git
-alias -g yolo='commit -m "$(curl -s https://whatthecommit.com/index.txt)"'
+alias -g yolo='commit -m "Dummy msg | $(curl -s https://whatthecommit.com/index.txt)"'
 
 # VSCodium
 alias c='codium'
