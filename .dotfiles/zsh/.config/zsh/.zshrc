@@ -14,6 +14,7 @@
 HISTFILE="${XDG_STATE_HOME}/zsh/history"
 HISTSIZE=10000                                  # Maximum events for internal history
 SAVEHIST=10000                                  # Maximum events in history file
+LANG='en_US.UTF-8'
 
 # Only vars used by external commands or non-interactive sub
 # shells need to be exported. Note that you can export vars
@@ -21,7 +22,17 @@ SAVEHIST=10000                                  # Maximum events in history file
 export XDG_CONFIG_HOME XDG_STATE_HOME
 export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_DATA_HOME="${HOME}/.local/share"
+export XDG_DATA_DIRS="/usr/local/share:/usr/share"
+export XDG_CONFIG_DIRS="/etc/xdg"
 export EDITOR=vim VISUAL=view
+
+autoload -Uz compinit
+compinit -d "${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}"
+zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
+
+
+# Custom vars
+DOTFILES="${HOME}/.dotfiles"
 
 # Oh my Zsh settings
 ZSH="${XDG_CONFIG_HOME}/ohmyzsh"                # Path to the Oh My Zsh repository folder
@@ -59,5 +70,22 @@ zstyle ':omz:update' mode auto
 zstyle ':omz:update' verbose default
 source "${ZSH}/oh-my-zsh.sh"
 
+
+# https://github.com/nvbn/thefuck
+if (( $+commands[thefuck] )); then
+    eval $(thefuck --alias)
+fi
+
 # Load Aliases
 source "${DOTFILES}/aliases"                    # For a full list of active aliases, run `alias`
+
+# ASDF
+export ASDF_CONFIG_FILE=${XDG_CONFIG_HOME}/asdf/.asdfrc
+
+# NPM
+export NPM_PATH="${XDG_CONFIG_HOME}/node_modules"
+export NPM_BIN="${XDG_CONFIG_HOME}/node_modules/bin"
+export NPM_CONFIG_PREFIX="${XDG_CONFIG_HOME}/node_modules"
+
+# Export PATH
+export PATH="${NPM_BIN}:${PATH}"                # NPM
