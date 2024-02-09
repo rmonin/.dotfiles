@@ -1,20 +1,21 @@
 # dotfiles
 My personal dotfiles
 
-## Execution
-
-From this root repo run:
+## Usage
 
 ```shell
-# Sync info Home
-rsync -avzP "$(pwd)/.dotfiles/" ~/.dotfiles
-# Deploy all dotfiles packages
-stow -d "${HOME}/.dotfiles" -t "${HOME}" -S zsh vim npm git -v --ignore=".DS_Store" --ignore="Google Drive"
+# Clone repo on your home
+git clone git@github.com:rmonin/dotfiles.git ~/.dotfiles
+cd ~/.dotfiles && make
 # Install Oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+```
 
-# Check if ~/.dotfiles have some diff content
-rsync -avzPn ~/.dotfiles/ "$(pwd)/.dotfiles" --exclude='.DS_Store'
+## Manual managment
+
+```shell
+# Deploy all dotfiles packages
+stow -d "${HOME}/.dotfiles" -t "${HOME}" -S zsh vim npm git -v --ignore=".DS_Store"
 ```
 
 ## SSH
