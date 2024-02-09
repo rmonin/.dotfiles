@@ -1,3 +1,8 @@
 [user]
-    email = contact@romain-monin.fr
     name = Romain Monin
+[fetch]
+	prune = true
+[init]
+	defaultBranch = main
+[status]
+	short = true
