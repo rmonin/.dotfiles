@@ -1,13 +1,14 @@
-SHELL:= /usr/bin/env zsh
-
 # List of packages to manage with stow
-PACKAGES = git npm vim zsh
+PACKAGES := $(filter-out .git .github, $(wildcard */))
 
 # Default location where stow will create symbolic links
 TARGET = ${HOME}
 
+# File(s) to ignore during stow
+IGNORE= '.DS_Store'
+
 # Stow command to create links
-STOW_CMD = stow --target=${TARGET} --ignore='.DS_Store'
+STOW_CMD = stow --target="${TARGET}" --ignore="${IGNORE}"
 
 # Function to backup existing files for a specific package if they exist
 define backup_if_exists
@@ -50,16 +51,17 @@ restow: backup unstow stow
 
 # Rule to display help
 help:
-	@echo "Usage:"
+	@echo ""
+	@echo "\033[1mUSAGE\033[0m"
+	@echo ""
 	@echo "  make [target]"
 	@echo ""
-	@echo "If no target is specified, 'make' will default to the 'stow' target"
+	@echo "\033[1mTARGETS\033[0m"
 	@echo ""
-	@echo "Targets:"
-	@echo "  backup  - Force to backup existing configurations before stowing"
-	@echo "  stow    - Create symlinks for all packages"
-	@echo "  unstow  - Remove symlinks for all packages"
+	@echo "  stow    - Create symlinks for all packages (default)"
 	@echo "  restow  - Reapply symlinks for all packages"
+	@echo "  unstow  - Remove symlinks for all packages (\033[31mcaution\033[0m)"
 	@echo "  help    - Show this help message"
+	@echo ""
 
 .PHONY: all backup stow unstow restow help
