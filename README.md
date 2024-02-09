@@ -12,13 +12,11 @@ Dotfiles are configuration files for various command-line tools and applications
 
 To use these dotfiles, follow these simple steps:
 
-   ```shell
-   git clone git@github.com:rmonin/.dotfiles.git ~/.dotfiles # 1. Clone repository to home directory
-   cd ~/.dotfiles                                            # 2. Navigate to the cloned repository
-   make                                                      # 3. Run the make command
-   ```
-
-## Advanced Usage
+```shell
+git clone git@github.com:rmonin/.dotfiles.git ~/.dotfiles 
+cd ~/.dotfiles
+make
+```
 
 The `make` command provides several targets for managing the dotfiles run `make help` to know usage:
 
