@@ -9,7 +9,7 @@ From this root repo run:
 # Sync info Home
 rsync -avzP "$(pwd)/.dotfiles/" ~/.dotfiles
 # Deploy all dotfiles packages
-stow -d "${HOME}/.dotfiles" -R zsh npm -v --ignore=".DS_Store"
+stow -d "${HOME}/.dotfiles" -t "${HOME}" -S zsh vim npm git -v --ignore=".DS_Store" --ignore="Google Drive"
 # Install Oh my zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
@@ -30,3 +30,4 @@ Try to follow XDG Base Directory Specification ([XDG BDS](https://specifications
 - https://wiki.debian.org/DotFilesList
 - https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html#//apple_ref/doc/uid/TP40010672-CH2-SW14
 - https://unix.stackexchange.com/questions/654663/problem-with-zsh-history-file
+- https://superuser.com/questions/874901/what-are-the-step-to-move-all-your-dotfiles-into-xdg-directories

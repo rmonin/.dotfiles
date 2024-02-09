@@ -17,5 +17,3 @@ export SHELL_SESSION_FILE=$SHELL_SESSION_DIR/$TERM_SESSION_ID
 if (( ! $+commands[brew] )); then
     eval "$(/opt/homebrew/bin/brew shellenv)"
 fi
-
-source "$(brew --prefix autoenv)/activate.sh"
