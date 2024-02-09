@@ -2,7 +2,7 @@
 
 <img src="https://repository-images.githubusercontent.com/742217560/0ff84823-23e7-4ab4-97b1-f10a111b47da">
 
-Welcome to my dotfiles repository! Here are my configuration files, organized and managed using [GNU Stow](https://www.gnu.org/software/stow/) and heavily inspired by Brandon Invergo's [article](https://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html).
+Here are my configuration files, organized and managed using [GNU Stow](https://www.gnu.org/software/stow/) and heavily inspired by Brandon Invergo's [article](https://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html) and trying to apply [XDG BDS](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
 
 ## Overview
 
@@ -47,6 +47,14 @@ The primary purpose of this project is to simplify the management of dotfiles by
 For more information on managing dotfiles, you can explore other methods and resources at [dotfiles.github.io](https://dotfiles.github.io).
 
 Feel free to customize and adapt these dotfiles to suit your preferences and workflow!
+
+## Ressources
+
+- [ArchWiki - XDG Base Directory](https://wiki.archlinux.org/title/XDG_Base_Directory)
+- https://wiki.debian.org/DotFilesList
+- [Apple Archives](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html#//apple_ref/doc/uid/TP40010672-CH2-SW14)
+- [zsh-history-file](https://unix.stackexchange.com/questions/654663/problem-with-zsh-history-file)
+- [move-all-your-dotfiles-into-xdg-directories](https://superuser.com/questions/874901/what-are-the-step-to-move-all-your-dotfiles-into-xdg-directories)
 
 ## License
 
