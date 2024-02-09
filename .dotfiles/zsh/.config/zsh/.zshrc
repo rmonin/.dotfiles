@@ -39,7 +39,7 @@ ZSH="${XDG_CONFIG_HOME}/ohmyzsh"                # Path to the Oh My Zsh reposito
 KEEP_ZSHRC='yes'                                # 'yes' means the ohmyzsh installer will not replace an existing .zshrc
 plugins=(                                       # Standard plugins can be found in $ZSH/plugins/
     asdf                                        # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-    # autoenv
+    autoenv
     colored-man-pages
     extract
     git
@@ -79,13 +79,21 @@ fi
 # Load Aliases
 source "${DOTFILES}/aliases"                    # For a full list of active aliases, run `alias`
 
+# Ansible
+export ANSIBLE_HOME="${XDG_CONFIG_HOME}/ansible"
+export ANSIBLE_CONFIG="${XDG_CONFIG_HOME}/ansible.cfg"
+export ANSIBLE_GALAXY_CACHE_DIR="${XDG_CACHE_HOME}/ansible/galaxy_cache"
+
 # ASDF
-export ASDF_CONFIG_FILE=${XDG_CONFIG_HOME}/asdf/.asdfrc
+export ASDF_CONFIG_FILE="${XDG_CONFIG_HOME}/asdf/.asdfrc"
+
+# Docker
+export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
+
+# less
+export LESSHISTFILE="${XDG_STATE_HOME}/less/history"
+export LESSKEY="${XDG_CONFIG_HOME}/less/keys"
 
 # NPM
-export NPM_PATH="${XDG_CONFIG_HOME}/node_modules"
-export NPM_BIN="${XDG_CONFIG_HOME}/node_modules/bin"
-export NPM_CONFIG_PREFIX="${XDG_CONFIG_HOME}/node_modules"
-
-# Export PATH
-export PATH="${NPM_BIN}:${PATH}"                # NPM
+export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME}/npm/npmrc"
+export PATH="${NPM_BIN}:${PATH}"

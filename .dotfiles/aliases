@@ -16,11 +16,11 @@ alias wtf='sudo dmesg | less'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
-alias lr='ls - lrah'
+alias lr='ls -lrah'
 alias ldot='ls -ld .*' 
 
 # Git
 alias -g yolo='commit -m "Dummy msg | $(curl -s https://whatthecommit.com/index.txt)"'
 
 # VSCodium
-alias c='codium'
+alias code='codium'
