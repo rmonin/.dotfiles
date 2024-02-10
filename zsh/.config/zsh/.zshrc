@@ -19,11 +19,7 @@ LANG='en_US.UTF-8'
 # Only vars used by external commands or non-interactive sub
 # shells need to be exported. Note that you can export vars
 # without assigning values to them.
-export XDG_CONFIG_HOME XDG_STATE_HOME
-export XDG_CACHE_HOME="${HOME}/.cache"
-export XDG_DATA_HOME="${HOME}/.local/share"
-export XDG_DATA_DIRS="/usr/local/share:/usr/share"
-export XDG_CONFIG_DIRS="/etc/xdg"
+source "exports/xdg.zsh"
 export EDITOR=vim VISUAL=view
 
 autoload -Uz compinit
@@ -54,7 +50,7 @@ CASE_SENSITIVE=false
 HYPHEN_INSENSITIVE=false
 DISABLE_AUTO_TITLE=true
 DISABLE_UNTRACKED_FILES_DIRTY=true                                # Disable marking untracked files under VCS as dirty
-ENABLE_CORRECTION=false
+ENABLE_CORRECTION=true
 HIST_STAMPS='%y%m%d %H:%M'
 if [[ -n ${XDG_CACHE_HOME} ]]; then                               # https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#zsh_cache_dir
     ZSH_CACHE_DIR="${XDG_CACHE_HOME}/ohmyzsh"                     # We only change cache folder if dedicated cache is enabled
@@ -81,25 +77,5 @@ fi
 # Load Aliases
 source "${DOTFILES}/aliases"                                      # For a full list of active aliases, run `alias`
 
-# Ansible
-export ANSIBLE_HOME="${XDG_CONFIG_HOME}/ansible"
-export ANSIBLE_CONFIG="${XDG_CONFIG_HOME}/ansible.cfg"
-export ANSIBLE_GALAXY_CACHE_DIR="${XDG_CACHE_HOME}/ansible/galaxy_cache"
-
-# ASDF
-export ASDF_CONFIG_FILE="${XDG_CONFIG_HOME}/asdf/.asdfrc"
-
-# Docker
-export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
-
-# less
-export LESSHISTFILE="${XDG_STATE_HOME}/less/history"
-export LESSKEY="${XDG_CONFIG_HOME}/less/keys"
-
-# NPM
-export NPM_CONFIG_USERCONFIG="${XDG_CONFIG_HOME}/npm/npmrc"
+# Path
 export PATH="${NPM_BIN}:${PATH}"
-
-# Vim
-export GVIMINIT='let $MYGVIMRC="$XDG_CONFIG_HOME/vim/gvimrc" | source $MYGVIMRC'
-export VIMINIT='let $MYVIMRC="$XDG_CONFIG_HOME/vim/vimrc" | source $MYVIMRC'
