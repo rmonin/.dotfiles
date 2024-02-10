@@ -1,15 +1,36 @@
-[fetch]
-	prune = true
-[include]
-    path = config.d/user.conf
-[init]
-	defaultBranch = main
-[status]
-	short = true
-[pull]
-	rebase = true
+[alias]
+    cleanup = "!git branch --merged | grep  -v '\\*\\|master\\|develop' | xargs -n 1 git branch -d"
+    current-branch = rev-parse --symbolic-full-name --abbrev-ref HEAD
+    digg = diff # Always misspel it...
+    # Better log display: https://coderwall.com/p/euwpig/a-better-git-log
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    shove = "!f() { H=$(git current-branch) && git push -u origin $H; }; f"
+    st = status
+    # Use when you're too exhausted... Send commit with random funny message
+    yolo = commit -m "Dummy msg | $(curl -s https://whatthecommit.com/index.txt)"
+
+[branch]
+    autosetupmerge = always
+    autosetuprebase = always
+
 [core]
-	editor = vim
+    editor = vim
+
+[fetch]
+    prune = true
+
+[init]
+    defaultBranch = main
+
+[pull]
+    rebase = true
+
+[rerere]
+    enabled = 1
+
+[status]
+    short = true
+
 [url "https://github.com/"]
     insteadOf = gh:
 
@@ -18,3 +39,7 @@
 
 [url "https://bitbucket.org/"]
     insteadOf = bb:
+
+# [user]
+[include]
+    path = config.d/user.conf

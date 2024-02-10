@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env zsh
 # ----------------------------------------------------------------------
 # Shell Aliases Configuration:
 # ----------------------------------------------------------------------
@@ -16,10 +16,6 @@ alias wtf='sudo dmesg | less'
 alias cp='cp -iv'
 alias mv='mv -iv'
 alias rm='rm -iv'
-
-
-# Git
-alias -g yolo='commit -m "Dummy msg | $(curl -s https://whatthecommit.com/index.txt)"'
 
 # VSCodium
 alias code='codium'

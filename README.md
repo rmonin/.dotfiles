@@ -73,7 +73,7 @@ Feel free to customize and adapt these dotfiles to suit your preferences and wor
 - [ ] Redis
 - [ ] SpamAssassin
 - [ ] TeamSpeak
-- [ ] tig
+- [ ] thefuck
 - [ ] Tmux
 - [ ] Vagrant
 - [ ] Vim

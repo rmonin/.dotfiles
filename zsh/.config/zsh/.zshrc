@@ -50,7 +50,7 @@ CASE_SENSITIVE=false
 HYPHEN_INSENSITIVE=false
 DISABLE_AUTO_TITLE=true
 DISABLE_UNTRACKED_FILES_DIRTY=true                                # Disable marking untracked files under VCS as dirty
-ENABLE_CORRECTION=true
+ENABLE_CORRECTION=false
 HIST_STAMPS='%y%m%d %H:%M'
 if [[ -n ${XDG_CACHE_HOME} ]]; then                               # https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#zsh_cache_dir
     ZSH_CACHE_DIR="${XDG_CACHE_HOME}/ohmyzsh"                     # We only change cache folder if dedicated cache is enabled
@@ -75,7 +75,7 @@ if (( $+commands[thefuck] )); then
 fi
 
 # Load Aliases
-source "${DOTFILES}/aliases"                                      # For a full list of active aliases, run `alias`
+source "${ZDOTDIR}/aliases.zsh"                                   # For a full list of active aliases, run `alias`
 
 # Path
 export PATH="${NPM_BIN}:${PATH}"

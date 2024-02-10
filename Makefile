@@ -8,7 +8,7 @@ TARGET = ${HOME}
 IGNORE= '.DS_Store'
 
 # Stow command to create links
-STOW_CMD = stow --target="${TARGET}" --ignore="${IGNORE}" --no-folding
+STOW_CMD = stow --target="${TARGET}" --ignore="${IGNORE}" --no-folding -v
 
 # Function to backup existing files for a specific package if they exist
 define backup_if_exists

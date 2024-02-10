@@ -13,12 +13,17 @@
 export SHELL_SESSION_DIR=$XDG_STATE_HOME/zsh/sessions
 export SHELL_SESSION_FILE=$SHELL_SESSION_DIR/$TERM_SESSION_ID
 
-# Homebrew Setup
-if (( ! $+commands[brew] )); then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
-
 # Coreutils
 if (( ! $+commands[brew] )); then
     eval $(dircolors "${XDG_CONFIG_HOME}"/dircolors)
+fi
+
+# Hub (Git wraper) https://github.com/mislav/hub
+if (( ! $+commands[hub] )); then
+    eval "$(hub alias -s)"
+fi
+
+# Homebrew Setup
+if (( ! $+commands[brew] )); then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
 fi

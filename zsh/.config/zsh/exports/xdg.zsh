@@ -73,6 +73,10 @@ export TS3_CONFIG_DIR="$XDG_CONFIG_HOME/ts3client"
 # Tig
 mkdir -p "${XDG_STATE_HOME}/tig"
 
+# tldr
+mkdir -p "${XDG_CACHE_HOME}/tldr"
+export TLDR_CACHE_DIR="${XDG_CACHE_HOME}/tldr"
+
 # Vagrant
 export VAGRANT_HOME="${XDG_DATA_HOME}/vagrant"
 export VAGRANT_ALIAS_FILE="${XDG_DATA_HOME}/vagrant/aliases"
