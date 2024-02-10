@@ -8,3 +8,13 @@
 	short = true
 [pull]
 	rebase = true
+[core]
+	editor = vim
+[url "https://github.com/"]
+    insteadOf = gh:
+
+[url "https://gist.github.com/"]
+    insteadOf = gist:
+
+[url "https://bitbucket.org/"]
+    insteadOf = bb:

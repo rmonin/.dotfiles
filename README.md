@@ -48,6 +48,41 @@ For more information on managing dotfiles, you can explore other methods and res
 
 Feel free to customize and adapt these dotfiles to suit your preferences and workflow!
 
+## Next Integraion
+
+- [ ] Ansible
+- [ ] Asdf
+- [ ] Dig
+- [ ] Discord
+- [ ] Docker
+- [ ] Dropbox
+- [ ] FFmpeg
+- [ ] Firefox
+- [ ] google-cloud-cli
+- [ ] K9s
+- [ ] Kubernetes
+- [ ] less
+- [ ] Minicube
+- [ ] Most
+- [ ] Node
+- [ ] npm
+- [ ] PHP
+- [ ] PostgreSQL
+- [ ] Python
+- [ ] R
+- [ ] Redis
+- [ ] SpamAssassin
+- [ ] TeamSpeak
+- [ ] tig
+- [ ] Tmux
+- [ ] Vagrant
+- [ ] Vim
+- [ ] Vlc
+- [ ] VSCode/Codium
+- [ ] W3m
+- [ ] WeeChat
+
+
 ## Ressources
 
 - [ArchWiki - XDG Base Directory](https://wiki.archlinux.org/title/XDG_Base_Directory)
