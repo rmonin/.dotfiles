@@ -1,0 +1,5 @@
+[user]
+    name = John Doe
+    email = personal@example.com
+[includeIf "gitdir:~/devel/work/"]
+    path = config.d/user.work.conf

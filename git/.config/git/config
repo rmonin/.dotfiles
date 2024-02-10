@@ -1,7 +1,7 @@
-[user]
-    name = Romain Monin
 [fetch]
 	prune = true
+[include]
+    path = config.d/user.conf
 [init]
 	defaultBranch = main
 [status]
