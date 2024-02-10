@@ -19,7 +19,7 @@ LANG='en_US.UTF-8'
 # Only vars used by external commands or non-interactive sub
 # shells need to be exported. Note that you can export vars
 # without assigning values to them.
-source "exports/xdg.zsh"
+source "${ZDOTDIR}/exports/xdg.zsh"
 export EDITOR=vim VISUAL=view
 
 autoload -Uz compinit
