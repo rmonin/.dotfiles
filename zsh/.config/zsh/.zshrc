@@ -100,8 +100,8 @@ ZSH="${XDG_CONFIG_HOME}/ohmyzsh"                                  # Path to the 
 KEEP_ZSHRC='yes'                                                  # 'yes' means the ohmyzsh installer will not replace an existing .zshrc
 plugins=(                                                         # Standard plugins can be found in $ZSH/plugins/
     asdf                                                          # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-    autoenv
     colored-man-pages
+    direnv
     extract
     git
     gitignore
@@ -133,11 +133,6 @@ source "${ZSH}/oh-my-zsh.sh"
 
 # Autoenv
 #source "$(brew --prefix autoenv)/activate.sh"
-
-# https://github.com/nvbn/thefuck
-# if (( $+commands[thefuck] )); then
-#     eval $(thefuck --alias)
-# fi
 
 inlcude_dir="${ZDOTDIR}/include"
 if [[ -d "$inlcude_dir" && -n "$(ls -A $inlcude_dir)" ]]; then

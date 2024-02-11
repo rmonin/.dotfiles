@@ -1,4 +1,6 @@
 .DS_Store
+.env
+.envrc
 
 # Git
 git/.config/git/config.d
