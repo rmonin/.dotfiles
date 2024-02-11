@@ -34,22 +34,6 @@ if [[ -d "$exports_dir" && -n "$(ls -A $exports_dir)" ]]; then
     done
 fi
 
-# Kubernetes
-export KUBECONFIG="${XDG_CONFIG_HOME}/kube" 
-export KUBECACHEDIR="${XDG_CACHE_HOME}/kube"
-
-# Minicube
-export MINIKUBE_HOME="${XDG_DATA_HOME}/minikube"
-
-# Python
-export PYTHON_HISTORY="${XDG_STATE_HOME}/python/history"
-export PYTHONPYCACHEPREFIX="${XDG_CACHE_HOME}/python"
-export PYTHONUSERBASE="${XDG_DATA_HOME}/python"
-
-# Vagrant
-export VAGRANT_HOME="${XDG_DATA_HOME}/vagrant"
-export VAGRANT_ALIAS_FILE="${XDG_DATA_HOME}/vagrant/aliases"
-
 autoload -Uz compinit
 mkdir -p "${XDG_CACHE_HOME}/zsh"                                  # the folder need to exists!
 compinit -d "${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}"      # See https://unix.stackexchange.com/questions/391641/separate-path-for-zcompdump-files
