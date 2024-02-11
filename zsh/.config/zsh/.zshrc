@@ -34,9 +34,6 @@ if [[ -d "$exports_dir" && -n "$(ls -A $exports_dir)" ]]; then
     done
 fi
 
-# ASDF
-export ASDF_CONFIG_FILE="${XDG_CONFIG_HOME}/asdf/.asdfrc"
-
 # Dicord
 export DISCORD_USER_DATA_DIR="${XDG_DATA_HOME}"
 
