@@ -35,15 +35,13 @@ backup:
 stow: backup
 	@echo "Applying stow for packages..."
 	@$(foreach package,${PACKAGES}, \
-		echo "Stowing ${package}..." && \
-		$(STOW_CMD) ${package};)
+		$(STOW_CMD) ${package} -v;)
 
 # Rule to remove symbolic links
 unstow:
 	@echo "Removing stow links for packages..."
 	@$(foreach package,$(PACKAGES), \
-		echo "Unstowing $(package)..." && \
-		$(STOW_CMD) -D $(package);)
+		$(STOW_CMD) -D $(package) -v;)
 
 # Rule to reapply symbolic links
 restow: backup unstow stow

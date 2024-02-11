@@ -138,8 +138,6 @@ Feel free to customize and adapt these dotfiles to suit your preferences and wor
 ## Next Integraion
 
 - [ ] Asdf
-- [ ] Dig
-- [ ] Discord
 - [ ] Docker
 - [ ] Dropbox
 - [ ] FFmpeg
@@ -147,9 +145,7 @@ Feel free to customize and adapt these dotfiles to suit your preferences and wor
 - [ ] google-cloud-cli
 - [ ] K9s
 - [ ] Kubernetes
-- [ ] less
 - [ ] Minicube
-- [ ] Most
 - [ ] Node
 - [ ] npm
 - [ ] PHP
@@ -162,7 +158,6 @@ Feel free to customize and adapt these dotfiles to suit your preferences and wor
 - [ ] thefuck
 - [ ] Tmux
 - [ ] Vagrant
-- [ ] Vim
 - [ ] Vlc
 - [ ] VSCode/Codium
 - [ ] W3m

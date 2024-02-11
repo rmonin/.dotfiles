@@ -13,11 +13,6 @@
 export SHELL_SESSION_DIR=$XDG_STATE_HOME/zsh/sessions
 export SHELL_SESSION_FILE=$SHELL_SESSION_DIR/$TERM_SESSION_ID
 
-# Homebrew Setup
-if (( ! $+commands[brew] )); then
-    eval "$(/opt/homebrew/bin/brew shellenv)"
-fi
-
 profile_dir="${ZDOTDIR}/profile"
 if [[ -d "$profile_dir" && -n "$(ls -A $profile_dir)" ]]; then
     for file in $profile_dir/*; do

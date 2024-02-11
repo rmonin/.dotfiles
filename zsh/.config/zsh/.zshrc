@@ -90,7 +90,6 @@ export VSCODE_PORTABLE="${XDG_DATA_HOME}/vscode"
 export W3M_DIR="${XDG_STATE_HOME}/w3m"
 
 
-
 autoload -Uz compinit
 mkdir -p "${XDG_CACHE_HOME}/zsh"                                  # the folder need to exists!
 compinit -d "${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}"      # See https://unix.stackexchange.com/questions/391641/separate-path-for-zcompdump-files
@@ -133,15 +132,29 @@ zstyle ':omz:update' verbose default
 source "${ZSH}/oh-my-zsh.sh"
 
 # Autoenv
-source "$(brew --prefix autoenv)/activate.sh"
+#source "$(brew --prefix autoenv)/activate.sh"
 
 # https://github.com/nvbn/thefuck
 # if (( $+commands[thefuck] )); then
 #     eval $(thefuck --alias)
 # fi
 
-# Load Aliases
-source "${ZDOTDIR}/aliases.zsh"                                   # For a full list of active aliases, run `alias`
+inlcude_dir="${ZDOTDIR}/include"
+if [[ -d "$inlcude_dir" && -n "$(ls -A $inlcude_dir)" ]]; then
+    for file in $inlcude_dir/*; do
+        source "$file"
+    done
+fi
 
-# Path
-export PATH="${NPM_BIN}:${PATH}"
+
+# Act
+alias act='act --container-architecture linux/amd64'
+
+# Load Other Aliases
+# For a full list of active aliases, run `alias`
+aliases_dir="${ZDOTDIR}/aliases"
+if [[ -d "$aliases_dir" && -n "$(ls -A $aliases_dir)" ]]; then
+    for file in $aliases_dir/*; do
+        source "$file"
+    done
+fi
