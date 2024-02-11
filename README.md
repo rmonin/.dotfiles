@@ -137,7 +137,6 @@ Feel free to customize and adapt these dotfiles to suit your preferences and wor
 
 ## Next Integraion
 
-- [ ] Asdf
 - [ ] Docker
 - [ ] Dropbox
 - [ ] FFmpeg
@@ -155,7 +154,6 @@ Feel free to customize and adapt these dotfiles to suit your preferences and wor
 - [ ] Redis
 - [ ] SpamAssassin
 - [ ] TeamSpeak
-- [ ] thefuck
 - [ ] Tmux
 - [ ] Vagrant
 - [ ] Vlc
