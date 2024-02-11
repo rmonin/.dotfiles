@@ -139,26 +139,20 @@ Feel free to customize and adapt these dotfiles to suit your preferences and wor
 
 - [ ] Docker
 - [ ] Dropbox
-- [ ] FFmpeg
 - [ ] Firefox
 - [ ] google-cloud-cli
 - [ ] K9s
 - [ ] Kubernetes
 - [ ] Minicube
-- [ ] Node
-- [ ] npm
 - [ ] PHP
-- [ ] PostgreSQL
 - [ ] Python
 - [ ] R
 - [ ] Redis
 - [ ] SpamAssassin
-- [ ] TeamSpeak
 - [ ] Tmux
 - [ ] Vagrant
 - [ ] Vlc
 - [ ] VSCode/Codium
-- [ ] W3m
 - [ ] WeeChat
 
 
