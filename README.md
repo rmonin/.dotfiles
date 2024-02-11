@@ -137,7 +137,6 @@ Feel free to customize and adapt these dotfiles to suit your preferences and wor
 
 ## Next Integraion
 
-- [ ] Ansible
 - [ ] Asdf
 - [ ] Dig
 - [ ] Discord
