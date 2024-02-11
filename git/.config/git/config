@@ -7,7 +7,8 @@
     shove = "!f() { H=$(git current-branch) && git push -u origin $H; }; f"
     st = status
     # Use when you're too exhausted... Send commit with random funny message
-    yolo = commit -m "Dummy msg | $(curl -s https://whatthecommit.com/index.txt)"
+    yolo = "!f() { git commit -m \"Dummy msg | $(curl -s https://whatthecommit.com/index.txt)\"; }; f"
+
 
 [branch]
     autosetupmerge = always
