@@ -34,9 +34,6 @@ if [[ -d "$exports_dir" && -n "$(ls -A $exports_dir)" ]]; then
     done
 fi
 
-# Dicord
-export DISCORD_USER_DATA_DIR="${XDG_DATA_HOME}"
-
 # Docker, Docker machine
 export DOCKER_CONFIG="${XDG_CONFIG_HOME}/docker"
 export MACHINE_STORAGE_PATH="${XDG_DATA_HOME}/docker-machine"
@@ -53,9 +50,6 @@ export KUBECACHEDIR="${XDG_CACHE_HOME}/kube"
 
 # Minicube
 export MINIKUBE_HOME="${XDG_DATA_HOME}/minikube"
-
-# Node, NPM
-export NODE_REPL_HISTORY="${XDG_DATA_HOME}/node_repl_history"
 
 #PostgreSQL
 mkdir -p "${XDG_CONFIG_HOME}/pg"
