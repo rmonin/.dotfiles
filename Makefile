@@ -1,14 +1,13 @@
 # List of packages to manage with stow
-PACKAGES := $(filter-out .git .github, $(wildcard */))
+PACKAGES ?= $(filter-out .git .github, $(wildcard */))
 
 # Default location where stow will create symbolic links
 TARGET = ${HOME}
 
-# File(s) to ignore during stow
-IGNORE= '.DS_Store'
+IGNORE = .DS_Store
 
 # Stow command to create links
-STOW_CMD = stow --target="${TARGET}" --ignore="${IGNORE}" --no-folding -v
+STOW_CMD = stow --target="${TARGET}" --ignore="${IGNORE}" --no-folding --dotfiles
 
 # Function to backup existing files for a specific package if they exist
 define backup_if_exists
@@ -18,13 +17,13 @@ define backup_if_exists
 	for file in $$checks; do \
 		filepath=${TARGET}/$$file; \
 		backup_suffix="backup-$$(date -u +%Y%m%d%H%M%S)"; \
-		echo "Creating backup of $$file as $$file.$$backup_suffix"; \
-		mv "$$filepath" "$$filepath.$$backup_suffix"; \
+		echo "Creating backup $$filepath.$$backup_suffix"; \
+		mv -h "$$filepath" "$$filepath.$$backup_suffix"; \
 	done
 endef
 
 # Default rule to create symbolic links for all packages
-all: backup stow
+all: stow
 
 # Rule to backup existing configurations
 backup:

@@ -20,15 +20,13 @@ LANG='en_US.UTF-8'
 # shells need to be exported. Note that you can export vars
 # without assigning values to them.
 source "${ZDOTDIR}/exports/xdg.zsh"
+
 export EDITOR=vim VISUAL=view
 
 autoload -Uz compinit
 mkdir -p "${XDG_CACHE_HOME}/zsh"                                  # the folder need to exists!
 compinit -d "${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}"      # See https://unix.stackexchange.com/questions/391641/separate-path-for-zcompdump-files
 zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
-
-# Custom vars
-DOTFILES="${HOME}/.dotfiles"
 
 # Oh my Zsh settings
 ZSH="${XDG_CONFIG_HOME}/ohmyzsh"                                  # Path to the Oh My Zsh repository folder
