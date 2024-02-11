@@ -19,9 +19,23 @@ LANG='en_US.UTF-8'
 # Only vars used by external commands or non-interactive sub
 # shells need to be exported. Note that you can export vars
 # without assigning values to them.
+export EDITOR=vim VISUAL=view
+export XDG_CONFIG_HOME XDG_STATE_HOME
+export XDG_RUNTIME_DIR="/run/user/${UID}"
+export XDG_CACHE_HOME="${HOME}/.cache"
+export XDG_DATA_HOME="${HOME}/.local/share"
+export XDG_DATA_DIRS="/usr/local/share:/usr/share"
+export XDG_CONFIG_DIRS="/etc/xdg"
+
 source "${ZDOTDIR}/exports/xdg.zsh"
 
-export EDITOR=vim VISUAL=view
+exports_dir="${ZDOTDIR}/exports"
+if [[ -d "$exports_dir" && -n "$(ls -A $exports_dir)" ]]; then
+    for file in $exports_dir/*; do
+        source "$file"
+    done
+fi
+
 
 autoload -Uz compinit
 mkdir -p "${XDG_CACHE_HOME}/zsh"                                  # the folder need to exists!
@@ -68,9 +82,9 @@ source "${ZSH}/oh-my-zsh.sh"
 source "$(brew --prefix autoenv)/activate.sh"
 
 # https://github.com/nvbn/thefuck
-if (( $+commands[thefuck] )); then
-    eval $(thefuck --alias)
-fi
+# if (( $+commands[thefuck] )); then
+#     eval $(thefuck --alias)
+# fi
 
 # Load Aliases
 source "${ZDOTDIR}/aliases.zsh"                                   # For a full list of active aliases, run `alias`

@@ -1,35 +1,33 @@
-" XDG Compatibility "
+" XDG Compatibility
 set runtimepath^=$XDG_CONFIG_HOME/vim
 set runtimepath+=$XDG_DATA_HOME/vim
 set runtimepath+=$XDG_CONFIG_HOME/vim/after
-
 set packpath^=$XDG_DATA_HOME/vim,$XDG_CONFIG_HOME/vim
 set packpath+=$XDG_CONFIG_HOME/vim/after,$XDG_DATA_HOME/vim/after
-
 let g:netrw_home = $XDG_DATA_HOME."/vim"
-call mkdir($XDG_DATA_HOME."/vim/spell", 'p')
-
-set backupdir=$XDG_STATE_HOME/vim/backup | call mkdir(&backupdir, 'p')
-set directory=$XDG_STATE_HOME/vim/swap   | call mkdir(&directory, 'p')
-set undodir=$XDG_STATE_HOME/vim/undo     | call mkdir(&undodir,   'p')
-set viewdir=$XDG_STATE_HOME/vim/view     | call mkdir(&viewdir,   'p')
+set backupdir=$XDG_STATE_HOME/vim/backup
+set directory=$XDG_STATE_HOME/vim/swap
+set undodir=$XDG_STATE_HOME/vim/undo
+set viewdir=$XDG_STATE_HOME/vim/view
 set viminfofile=$XDG_STATE_HOME/vim/viminfo
 
-" General "
-set nocompatible " Disable compatibility with vi which can cause unexpected issues."
-filetype on      " Enable type file detection. Vim will be able to try to detect the type of file in use."
+" General
+set nocompatible  " Disable compatibility with vi which can cause unexpected issues.
+filetype on       " Enable type file detection. Vim will be able to try to detect the type of file in use.
+set nobackup      " Do not save backup files.
 set undolevels=1000
 set backspace=indent,eol,start
 
-" UX "
-syntax on         " Turn syntax highlighting on. "
-set nowrap        " Do not wrap lines. Allow long lines to extend as far as the line goes. "
-set showbreak=+++ " Used to show line wrapped (useless when nowrap enabled "
+" UX
+syntax on          " Turn syntax highlighting on.
+set nowrap         " Do not wrap lines. Allow long lines to extend as far as the line goes.
+set showbreak=+++  " Used to show line wrapped (useless when nowrap enabled
 set hlsearch
 set shiftwidth=4
 set softtabstop=2
-set expandtab     " Use space characters instead of tabs. "
-highlight CursorLine cterm=NONE ctermbg=DarkGray
-set cursorline
+set expandtab      " Use space characters instead of tabs.
 set ruler
+set cursorline
+highlight CursorLine cterm=NONE ctermbg=DarkGray
+
  
