@@ -21,6 +21,8 @@ fi
 # Set $ZDOTDIR here to be able to store your other Zsh dotfiles 
 ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 
-# Disable the save/restore mechanism from
-# /private/etc/zshrc_Apple_Terminal
-SHELL_SESSIONS_DISABLE=1
+if [[ "$(uname)" == "Darwin" ]]; then
+    # Disable the save/restore mechanism from
+    # /private/etc/zshrc_Apple_Terminal
+    SHELL_SESSIONS_DISABLE=1
+fi
