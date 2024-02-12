@@ -6,7 +6,7 @@ if [ `uname` = 'Darwin' ] ; then
   percent=`pmset -g batt | grep -Eo "\d+%" | cut -d% -f1`
 fi
 
-if   (( percent > 20 )); then color='#[fg=default none]'
+if   (( percent > 20 )); then color='#[fg=default]'
 elif (( percent > 10 )); then color='#[fg=colour3 bold]'
                          else color='#[fg=colour1 bold]'
 fi
