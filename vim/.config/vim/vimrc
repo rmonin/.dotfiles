@@ -28,6 +28,6 @@ set softtabstop=2
 set expandtab      " Use space characters instead of tabs.
 set ruler
 set cursorline
-highlight CursorLine cterm=NONE ctermbg=DarkGray
+highlight CursorLine cterm=NONE ctermbg=Black
 
  

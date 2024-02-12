@@ -149,7 +149,6 @@ Feel free to customize and adapt these dotfiles to suit your preferences and wor
 - [ ] R
 - [ ] Redis
 - [ ] SpamAssassin
-- [ ] Tmux
 - [ ] Vagrant
 - [ ] Vlc
 - [ ] VSCode/Codium
