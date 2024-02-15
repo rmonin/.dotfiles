@@ -24,16 +24,8 @@ function d () {
 compdef _dirs d
 
 # List directory contents
-alias ls='ls -h'
 alias ll='ls -l'
 alias la='ls -lA'
 alias lr='ls -lr'
 alias lra='ls -lrA'
-
-function ldot() {
-  if [ -z $1 ]; then
-    ls -ld .[^.]* 2>/dev/null
-  else
-    ls -ld $1/.[^.]* 2>/dev/null
-  fi
-}
+alias ldot='ls -ld .*'

@@ -13,8 +13,7 @@ set viminfofile=$XDG_STATE_HOME/vim/viminfo
 
 " General
 set nocompatible  " Disable compatibility with vi which can cause unexpected issues.
-filetype on       " Enable type file detection. Vim will be able to try to detect the type of file in use.
-set nobackup      " Do not save backup files.
+filetype on       " Vim will be able to try to detect the type of file in use.
 set undolevels=1000
 set backspace=indent,eol,start
 
@@ -22,12 +21,9 @@ set backspace=indent,eol,start
 syntax on          " Turn syntax highlighting on.
 set nowrap         " Do not wrap lines. Allow long lines to extend as far as the line goes.
 set showbreak=+++  " Used to show line wrapped (useless when nowrap enabled)
-set hlsearch
-set shiftwidth=4
-set softtabstop=2
 set expandtab      " Use space characters instead of tabs.
 set ruler
 
-highlight CursorLine cterm=NONE ctermbg=gray 
-highlight CursorLineNr cterm=bold ctermbg=NONE ctermfg=gray 
+set shiftwidth=4
+set softtabstop=2
 
