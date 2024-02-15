@@ -1,2 +1,0 @@
-# VSCodium
-alias code='codium'
