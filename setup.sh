@@ -1,3 +1,3 @@
-# act ansible asdf hub
-PACKAGES='git homebrew htop less thefuck tmux vim zsh' \
+# act ansible
+PACKAGES='asdf bat git homebrew htop less thefuck tldr tmux tmuxp vim zsh' \
 make
