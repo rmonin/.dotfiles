@@ -1,7 +1,7 @@
 local return_code="%B%(?..%{$fg[red]%}%? %{$reset_color%})%b"
-local user_host="%B%(!.%{$fg[red]%}.%{$fg[green]%})%n@%m%{$reset_color%} "
+local user_host="%(!.%{$fg[red]%}.%{$fg[green]%})%n@%m%{$reset_color%} "
 local user_symbol='%(!.#.$)'
-local current_dir="%B%{$fg[blue]%}%~ %{$reset_color%}"
+local current_dir="%{$fg[blue]%}%~ %{$reset_color%}"
 
 local vcs_branch='$(git_prompt_info)$(hg_prompt_info)'
 local rvm_ruby='$(ruby_prompt_info)'
@@ -9,7 +9,7 @@ local venv_prompt='$(virtualenv_prompt_info)'
 
 ZSH_THEME_RVM_PROMPT_OPTIONS="i v g"
 
-PROMPT="╭ ${return_code}${current_dir}${rvm_ruby}${vcs_branch}${venv_prompt}
+PROMPT="╭ ${return_code}${user_host}${current_dir}${rvm_ruby}${vcs_branch}${venv_prompt}
 %B${user_symbol}%b "
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}‹"

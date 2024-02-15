@@ -13,7 +13,7 @@
 export SHELL_SESSION_DIR=$XDG_STATE_HOME/zsh/sessions
 export SHELL_SESSION_FILE=$SHELL_SESSION_DIR/$TERM_SESSION_ID
 
-profile_dir="${ZDOTDIR}/profile"
+profile_dir="${ZDOTDIR}/profile.d"
 if [[ -d "$profile_dir" && -n "$(ls -A $profile_dir)" ]]; then
     for file in $profile_dir/*; do
         source "$file"

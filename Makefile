@@ -1,13 +1,24 @@
 # List of packages to manage with stow
 PACKAGES ?= $(filter-out .git .github, $(wildcard */))
 
-# Default location where stow will create symbolic links
-TARGET = ${HOME}
+# Directory where stow will look for packages. Default is current directory
+DIR ?= $$(pwd)
 
-IGNORE = .DS_Store
+# Default location where stow will create symbolic links
+TARGET ?= ${HOME}
+
+IGNORE ?= \.DS_Store
 
 # Stow command to create links
-STOW_CMD = stow --target="${TARGET}" --ignore="${IGNORE}" --no-folding --dotfiles
+STOW_CMD = stow \
+	--dir="${DIR}" \
+	--target="${TARGET}" \
+	--ignore="${IGNORE}" \
+	--ignore="\.DS_Store" \
+	--ignore=".*\.template" \
+	--no-folding \
+	--dotfiles \
+	--verbose
 
 # Function to backup existing files for a specific package if they exist
 define backup_if_exists
@@ -35,13 +46,13 @@ backup:
 stow: backup
 	@echo "Applying stow for packages..."
 	@$(foreach package,${PACKAGES}, \
-		$(STOW_CMD) ${package} -v;)
+		$(STOW_CMD) ${package};)
 
 # Rule to remove symbolic links
 unstow:
 	@echo "Removing stow links for packages..."
 	@$(foreach package,$(PACKAGES), \
-		$(STOW_CMD) -D $(package) -v;)
+		$(STOW_CMD) -D $(package);)
 
 # Rule to reapply symbolic links
 restow: backup unstow stow

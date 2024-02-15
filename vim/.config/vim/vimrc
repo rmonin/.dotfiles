@@ -21,7 +21,7 @@ set backspace=indent,eol,start
 " UX
 syntax on          " Turn syntax highlighting on.
 set nowrap         " Do not wrap lines. Allow long lines to extend as far as the line goes.
-set showbreak=+++  " Used to show line wrapped (useless when nowrap enabled
+set showbreak=+++  " Used to show line wrapped (useless when nowrap enabled)
 set hlsearch
 set shiftwidth=4
 set softtabstop=2

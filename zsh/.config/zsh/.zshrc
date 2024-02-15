@@ -24,24 +24,29 @@ export XDG_CONFIG_HOME XDG_STATE_HOME
 export XDG_RUNTIME_DIR="/run/user/${UID}"
 export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_DATA_HOME="${HOME}/.local/share"
-export XDG_DATA_DIRS="/usr/local/share:/usr/share"
-export XDG_CONFIG_DIRS="/etc/xdg"
+export XDG_DATA_DIRS='/usr/local/share:/usr/share'
+export XDG_CONFIG_DIRS='/etc/xdg'
 
-exports_dir="${ZDOTDIR}/exports"
-if [[ -d "$exports_dir" && -n "$(ls -A $exports_dir)" ]]; then
-    for file in $exports_dir/*; do
-        source "$file"
+exports_dir="${ZDOTDIR}/exports.d"
+if [[ -d ${exports_dir} && -n $(ls -A ${exports_dir}) ]]; then
+    for file in ${exports_dir}/*; do
+        source ${file}
     done
+fi
+
+mkdir -p "${XDG_STATE_HOME}/zsh"                                  # the folder need to exists!
+if [ ! -f "$HISTFILE" ]; then
+    touch "$HISTFILE"
 fi
 
 autoload -Uz compinit
 mkdir -p "${XDG_CACHE_HOME}/zsh"                                  # the folder need to exists!
 compinit -d "${XDG_CACHE_HOME}/zsh/zcompdump-${ZSH_VERSION}"      # See https://unix.stackexchange.com/questions/391641/separate-path-for-zcompdump-files
-zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
+zstyle ':completion:*' cache-path "${XDG_CACHE_HOME}/zsh/zcompcache"
 
 # Oh my Zsh settings
-ZSH="${XDG_CONFIG_HOME}/ohmyzsh"                                  # Path to the Oh My Zsh repository folder
-KEEP_ZSHRC='yes'                                                  # 'yes' means the ohmyzsh installer will not replace an existing .zshrc
+export ZSH="${XDG_DATA_HOME}/ohmyzsh"                             # Path to the Oh My Zsh repository folder
+export KEEP_ZSHRC='yes'                                           # 'yes' means the ohmyzsh installer will not replace an existing .zshrc
 plugins=(                                                         # Standard plugins can be found in $ZSH/plugins/
     asdf                                                          # Custom plugins may be added to $ZSH_CUSTOM/plugins/
     colored-man-pages
@@ -52,7 +57,7 @@ plugins=(                                                         # Standard plu
     safe-paste
 )
 ZSH_THEME='bira-lite'                                             # https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_CUSTOM="${ZSH}_custom"                                        # https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#zsh_custom
+ZSH_CUSTOM="${ZSH}.custom"                                        # https://github.com/ohmyzsh/ohmyzsh/wiki/Settings#zsh_custom
 COMPLETION_WAITING_DOTS=true                                      # Print dots to indicate that Zsh is still processing a completion request
 CASE_SENSITIVE=false
 HYPHEN_INSENSITIVE=false
@@ -72,9 +77,11 @@ zstyle ':omz:plugins:git' aliases no
 zstyle ':omz:update' frequency 7
 zstyle ':omz:update' mode auto
 zstyle ':omz:update' verbose default
-source "${ZSH}/oh-my-zsh.sh"
+if [[ -f "${ZSH}/oh-my-zsh.sh" ]]; then
+    source "${ZSH}/oh-my-zsh.sh"
+fi
 
-inlcude_dir="${ZDOTDIR}/include"
+inlcude_dir="${ZDOTDIR}/includes.d"
 if [[ -d "$inlcude_dir" && -n "$(ls -A $inlcude_dir)" ]]; then
     for file in $inlcude_dir/*; do
         source "$file"
@@ -83,8 +90,8 @@ fi
 
 # Load Other Aliases
 # For a full list of active aliases, run `alias`
-aliases_dir="${ZDOTDIR}/aliases"
-if [[ -d "$aliases_dir" && -n "$(ls -A $aliases_dir)" ]]; then
+aliases_dir="${ZDOTDIR}/aliases.d"
+if [[ -d ${aliases_dir} && -n "$(ls -A $aliases_dir)" ]]; then
     for file in $aliases_dir/*; do
         source "$file"
     done

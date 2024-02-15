@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # Patch: add ln in exceptions as it most always a new file
 if [[ "$ENABLE_CORRECTION" == "true" ]]; then
   alias cp='nocorrect cp'
