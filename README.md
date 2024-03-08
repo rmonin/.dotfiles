@@ -1,6 +1,6 @@
 # dotfles
 
-<img src="https://repository-images.githubusercontent.com/742217560/0ff84823-23e7-4ab4-97b1-f10a111b47da">
+![Feature image](https://repository-images.githubusercontent.com/742217560/0ff84823-23e7-4ab4-97b1-f10a111b47da)
 
 Here are my configuration files, organized and managed using [GNU Stow](https://www.gnu.org/software/stow/) and heavily inspired by Brandon Invergo's [article](https://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html) and trying to apply [XDG BDS](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
 
