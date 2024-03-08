@@ -9,7 +9,6 @@
     # Use when you're too exhausted... Send commit with random funny message
     yolo = "!f() { git commit -m \"Dummy msg | $(curl -s https://whatthecommit.com/index.txt)\"; }; f"
 
-
 [branch]
     autosetupmerge = always
     autosetuprebase = always
