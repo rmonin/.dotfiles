@@ -118,6 +118,9 @@ dotfles/
     │  ╰─ [...some files]
     ╰─ dot-vimrc
 ```
+
+> **NOTICE:** `--dotfiles` is not working in addition to `--dir` and/or `--target`
+
 </details>
 
 **Note**:
@@ -134,26 +137,6 @@ The primary purpose of this project is to simplify the management of dotfiles by
 For more information on managing dotfiles, you can explore other methods and resources at [dotfiles.github.io](https://dotfiles.github.io).
 
 Feel free to customize and adapt these dotfiles to suit your preferences and workflow!
-
-## Next Integraion
-
-- [ ] Docker
-- [ ] Dropbox
-- [ ] Firefox
-- [ ] google-cloud-cli
-- [ ] K9s
-- [ ] Kubernetes
-- [ ] Minicube
-- [ ] PHP
-- [ ] Python
-- [ ] R
-- [ ] Redis
-- [ ] SpamAssassin
-- [ ] Vagrant
-- [ ] Vlc
-- [ ] VSCode/Codium
-- [ ] WeeChat
-
 
 ## Ressources
 

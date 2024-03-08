@@ -1,28 +1,20 @@
-#!/usr/bin/env zsh 
+#!/usr/bin/env zsh
+
 # ----------------------------------------------------------------------
 # Zsh Environment Configuration:
 # ----------------------------------------------------------------------
-# Executed every time Zsh starts to initialize environment variables and
+# Executed every time Zsh starts to initialize environment variables and
 # basic settings.
 # No need to export anything here, as .zshenv is sourced for 
 # _every_ shell (unless invoked with `zsh -f`).
 # ----------------------------------------------------------------------
 
-# : ${XDG_CONFIG_HOME:=$HOME/.config}
-if [ -z "${XDG_CONFIG_HOME}" ]; then
-    XDG_CONFIG_HOME="${HOME}/.config"
-fi
+# Set XDG_CONFIG_HOME and XDG_STATE_HOME if they are not already set
+: "${XDG_CONFIG_HOME:=${HOME}/.config}"
+: "${XDG_STATE_HOME:=${HOME}/.local/state}"
 
-# : ${XDG_STATE_HOME:=~/.local/state}
-if [ -z "${XDG_STATE_HOME}" ]; then
-    XDG_STATE_HOME="${HOME}/.local/state"
-fi
-
-# Set $ZDOTDIR here to be able to store your other Zsh dotfiles 
+# Set ZDOTDIR to store other Zsh dotfiles
 ZDOTDIR="${XDG_CONFIG_HOME}/zsh"
 
-# Disable the save/restore mechanism from
-# /private/etc/zshrc_Apple_Terminal
-if [[ "$(uname)" == "Darwin" ]]; then
-    SHELL_SESSIONS_DISABLE=1
-fi
+# Disable save/restore mechanism from /private/etc/zshrc_Apple_Terminal
+SHELL_SESSIONS_DISABLE=1

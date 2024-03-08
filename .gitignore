@@ -3,5 +3,5 @@
 .envrc
 
 # Git
-git/.config/git/config.d
-!git/.config/git/config.d/*.template
+git/.config/git/config.d/
+!git/**/*.template

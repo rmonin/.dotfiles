@@ -15,10 +15,12 @@ HISTFILE="${XDG_STATE_HOME}/zsh/history"
 HISTSIZE=10000                                                    # Maximum events for internal history
 SAVEHIST=10000                                                    # Maximum events in history file
 LANG='en_US.UTF-8'
+LC_ALL='en_US.UTF-8'
 
 # Only vars used by external commands or non-interactive sub
 # shells need to be exported. Note that you can export vars
 # without assigning values to them.
+export LANG LC_ALL
 export EDITOR=vim VISUAL=view
 export XDG_CONFIG_HOME XDG_STATE_HOME
 export XDG_RUNTIME_DIR="/run/user/${UID}"
@@ -26,6 +28,7 @@ export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_DATA_DIRS='/usr/local/share:/usr/share'
 export XDG_CONFIG_DIRS='/etc/xdg'
+
 
 exports_dir="${ZDOTDIR}/exports.d"
 if [[ -d ${exports_dir} && -n $(ls -A ${exports_dir}) ]]; then
@@ -51,7 +54,6 @@ plugins=(                                                         # Standard plu
     asdf                                                          # Custom plugins may be added to $ZSH_CUSTOM/plugins/
     colored-man-pages
     direnv
-    extract
     git
     gitignore
     safe-paste
@@ -96,3 +98,5 @@ if [[ -d ${aliases_dir} && -n "$(ls -A $aliases_dir)" ]]; then
         source "$file"
     done
 fi
+
+export PATH="${PATH}:${HOME}/.local/bin"

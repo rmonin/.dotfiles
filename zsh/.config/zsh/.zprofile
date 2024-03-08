@@ -19,3 +19,6 @@ if [[ -d "$profile_dir" && -n "$(ls -A $profile_dir)" ]]; then
         source "$file"
     done
 fi
+
+# Added by OrbStack: command-line tools and integration
+source ~/.orbstack/shell/init.zsh 2>/dev/null || :

@@ -36,6 +36,9 @@ endef
 # Default rule to create symbolic links for all packages
 all: stow
 
+debug:
+	${STOW_CMD} --no $(PACKAGES) 2>&1
+
 # Rule to backup existing configurations
 backup:
 	@echo "Checking for existing files to backup..."
