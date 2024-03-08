@@ -125,6 +125,7 @@ dotfles/
 
 **Note**:
 > Please use caution when applying or removing symlinks, especially when using the `unstow` target, as it can potentially overwrite existing configurations. Always review the changes before proceeding.
+> See https://github.com/aspiers/stow/issues/33
 
 ## Requirements
 
