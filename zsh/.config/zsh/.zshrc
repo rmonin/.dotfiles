@@ -30,7 +30,7 @@ export XDG_DATA_DIRS='/usr/local/share:/usr/share'
 export XDG_CONFIG_DIRS='/etc/xdg'
 
 
-exports_dir="${ZDOTDIR}/exports.d"
+exports_dir="${XDG_CONFIG_HOME}/sh/exports.d"
 if [[ -d ${exports_dir} && -n $(ls -A ${exports_dir}) ]]; then
     for file in ${exports_dir}/*; do
         source ${file}

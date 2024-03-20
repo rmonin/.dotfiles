@@ -52,12 +52,12 @@ TARGETS
 You can provide son variables to adjust make behavior. vars are `PACKAGES`, `TARGET` and `IGNORE`. Check [Makefile](https://github.com/rmonin/dotfles/blob/main/Makefile) if needed
 
 ```shell
-PACKAGES = "zsh vim" make
+PACKAGES="zsh vim" make
 ```
 
 ### Structure
 
-I Suggest to organize each content like below and launch `PACKAGES = "configs" make`
+I Suggest to organize each content like below and launch `PACKAGES="configs" make`
 
 ```
 .dotfiles/
