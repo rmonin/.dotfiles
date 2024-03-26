@@ -4,6 +4,12 @@
 
 Here are my configuration files, organized and managed using [GNU Stow](https://www.gnu.org/software/stow/) and heavily inspired by Brandon Invergo's [article](https://brandon.invergo.net/news/2012-05-26-using-gnu-stow-to-manage-your-dotfiles.html) and trying to apply [XDG BDS](https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html).
 
+The primary purpose of this project is to simplify the management of dotfiles by organizing them into separate _packages_ and automatically creating symlinks to the appropriate locations. It aims to provide a straightforward solution without excessive complexity.
+
+For more information on managing dotfiles, you can explore other methods and resources at [dotfiles.github.io](https://dotfiles.github.io).
+
+Feel free to customize and adapt these dotfiles to suit your preferences and workflow!
+
 ## Philosophy
 
 Managing dotfiles across multiple systems can be tedious, especially when setting up a new installation. My goal here is to simplify this process by centralizing dotfiles in a single repository.
@@ -14,10 +20,6 @@ Managing dotfiles across multiple systems can be tedious, especially when settin
 - **Simplified Synchronization with Makefile** - To streamline the synchronization process with Stow, a Makefile is provided. This Makefile automates the task of synchronizing dotfiles, simplifying the process and reducing the need for manual intervention.
 
 By adopting a _Keep It Simple, Stupid_ (KISS) approach, I try aims to provide a straightforward and effective solution for managing dotfiles, ensuring ease of use and maintainability across different systems.
-
-## Requirements
-
-This project requires [GNU Stow](https://www.gnu.org/software/stow/) to be installed.
 
 ## Usage
 
@@ -53,7 +55,7 @@ TARGETS
 
 ### Structure
 
-I Suggest to organize each content like below and launch `PACKAGES="configs" make`
+You can organize each content like below and launch `PACKAGES="configs" make`
 
 ```
 .dotfiles/
@@ -117,18 +119,6 @@ You can alternatively put everything messy on a configs _package_ (or whatever y
 > ```
 
 </details>
-
-## Requirements
-
-This project requires [GNU Stow](https://www.gnu.org/software/stow/) to be installed.
-
-## Purpose
-
-The primary purpose of this project is to simplify the management of dotfiles by organizing them into separate _packages_ and automatically creating symlinks to the appropriate locations. It aims to provide a straightforward solution without excessive complexity.
-
-For more information on managing dotfiles, you can explore other methods and resources at [dotfiles.github.io](https://dotfiles.github.io).
-
-Feel free to customize and adapt these dotfiles to suit your preferences and workflow!
 
 ## Ressources
 
