@@ -93,28 +93,29 @@ You can alternatively put everything messy on a configs _package_ (or whatever y
    ╰─ .vimrc
 ```
 
-**NOT WORKING** According to Stow documentation, the Makefile manage also `--dotfiles` option, so you can also use _dot-_ prefix if you do not want hidden content on your project :
-
-```
-dotfles/
-╰─ configs/
-   ├─ dot-bashrc
-   ├─ dot-bash_profile
-   ├─ dot-bash_logout
-   ├─ uzbl/
-   │  ╰─ [...some files]
-   ├─ dot-local/
-   │  ╰─ share/
-   │     ╰─ uzbl/
-   │        ╰─ [...some files]
-   ├─ dot-vim/
-   │  ╰─ [...some files]
-   ╰─ dot-vimrc
-```
+> **NOT WORKING**
+> According to Stow documentation, the Makefile manage also `--dotfiles` option, so you can also use _dot-_ prefix if you do not want hidden content on your project :
+>
+> ```
+> dotfles/
+> ╰─ configs/
+>    ├─ dot-bashrc
+>    ├─ dot-bash_profile
+>    ├─ dot-bash_logout
+>    ├─ uzbl/
+>    │  ╰─ [...some files]
+>    ├─ dot-local/
+>    │  ╰─ share/
+>    │     ╰─ uzbl/
+>    │        ╰─ [...some files]
+>    ├─ dot-vim/
+>    │  ╰─ [...some files]
+>    ╰─ dot-vimrc
+> ```
 
 </details>
 
-**Note**:
+> **Notice**
 > Please use caution when applying or removing symlinks, especially when using the `unstow` target, as it can potentially overwrite existing configurations. Always review the changes before proceeding.
 > See https://github.com/aspiers/stow/issues/33
 
