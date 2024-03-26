@@ -24,7 +24,7 @@ This project requires [GNU Stow](https://www.gnu.org/software/stow/) to be insta
 To use these dotfiles, follow these simple steps:
 
 ```shell
-brew install stow
+sudo apt install stow
 git clone git@github.com:rmonin/dotfles.git ~/.dotfiles 
 cd ~/.dotfiles
 ./setup-ubuntu.sh
@@ -71,6 +71,9 @@ I Suggest to organize each content like below and launch `PACKAGES="configs" mak
    ╰─ .vimrc
 ```
 
+> **Notice**
+> Please use caution when applying or removing symlinks, especially when using the `unstow` target, as it can potentially overwrite existing configurations. Always review the changes before proceeding.
+> See https://github.com/aspiers/stow/issues/33
 
 <details><summary><b>Other way</b></summary>
 
@@ -114,10 +117,6 @@ You can alternatively put everything messy on a configs _package_ (or whatever y
 > ```
 
 </details>
-
-> **Notice**
-> Please use caution when applying or removing symlinks, especially when using the `unstow` target, as it can potentially overwrite existing configurations. Always review the changes before proceeding.
-> See https://github.com/aspiers/stow/issues/33
 
 ## Requirements
 
