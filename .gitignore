@@ -5,3 +5,6 @@
 # Git
 git/.config/git/config.d/
 !git/**/*.template
+
+# Gnupg
+gnupg/.local/

@@ -122,6 +122,7 @@ You can alternatively put everything messy on a configs _package_ (or whatever y
 
 ## Ressources
 
+- [XDG - Base Directory Specification](https://gist.github.com/roalcantara/107ba66dfa3b9d023ac9329e639bc58c)
 - [ArchWiki - XDG Base Directory](https://wiki.archlinux.org/title/XDG_Base_Directory)
 - https://wiki.debian.org/DotFilesList
 - [Apple Archives](https://developer.apple.com/library/archive/documentation/FileManagement/Conceptual/FileSystemProgrammingGuide/FileSystemOverview/FileSystemOverview.html#//apple_ref/doc/uid/TP40010672-CH2-SW14)

@@ -1,4 +1,4 @@
-PACKAGES="asdf bash bat git less thefuck tmux vim" \
+PACKAGES="asdf bash bat git gnupg less thefuck tmux vim" \
   make restow;
 
 if [ ! -d "${XDG_DATA_HOME}/tmux/plugins/tmux-mode-indicator" ]; then
