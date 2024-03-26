@@ -1,4 +1,4 @@
-# List of packages to manage with stow
+# List of packages to manage with stow. Default: All
 PACKAGES ?= $(filter-out .git .github, $(wildcard */))
 
 # Directory where stow will look for packages. Default is current directory
@@ -7,20 +7,18 @@ DIR ?= $$(pwd)
 # Default location where stow will create symbolic links
 TARGET ?= ${HOME}
 
-IGNORE ?= \.DS_Store
-
 # Stow command to create links
 STOW_CMD = stow \
 	--dir="${DIR}" \
 	--target="${TARGET}" \
-	--ignore="${IGNORE}" \
 	--ignore="\.DS_Store" \
 	--ignore=".*\.template" \
 	--no-folding \
-	--dotfiles \
 	--verbose
 
 # Function to backup existing files for a specific package if they exist
+# egrep + sed combined is used instead of native grep -e syntax to be
+# compatible with non GNU grep on MacOS.
 define backup_if_exists
 	checks=$$(${STOW_CMD} --no --verbose ${1} 2>&1 | \
 		egrep '\* existing target is ' | \
