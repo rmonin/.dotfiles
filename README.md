@@ -47,6 +47,10 @@ TARGETS
   help    - Show this help message
 ```
 
+> **Notice**
+> Please use caution when applying or removing symlinks, especially when using the `unstow` target, as it can potentially overwrite existing configurations. Always review the changes before proceeding.
+> See https://github.com/aspiers/stow/issues/33
+
 ### Structure
 
 I Suggest to organize each content like below and launch `PACKAGES="configs" make`
@@ -70,10 +74,6 @@ I Suggest to organize each content like below and launch `PACKAGES="configs" mak
    │  ╰─ [...some files]
    ╰─ .vimrc
 ```
-
-> **Notice**
-> Please use caution when applying or removing symlinks, especially when using the `unstow` target, as it can potentially overwrite existing configurations. Always review the changes before proceeding.
-> See https://github.com/aspiers/stow/issues/33
 
 <details><summary><b>Other way</b></summary>
 
