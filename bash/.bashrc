@@ -4,6 +4,18 @@
 
 XDG_CONFIG_HOME="${HOME}/.config"
 XDG_STATE_HOME="${HOME}/.local/state"
+XDG_DATA_HOME="${HOME}/.local/share"
+
+# https://github.com/sharkdp/bat?tab=readme-ov-file#integration-with-other-tools
+mkdir -p ~/.local/bin
+PATH="${PATH}:${HOME}/.local/bin"
+
+init_dir="${XDG_CONFIG_HOME}/sh/init.d"
+if [[ -d ${init_dir} && -n $(ls -A ${init_dir}) ]]; then
+    for file in ${init_dir}/*; do
+        source ${file}
+    done
+fi
 
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
@@ -20,10 +32,9 @@ LC_ALL='en_US.UTF-8'
 
 export LANG LC_ALL
 export EDITOR=vim VISUAL=view
-export XDG_CONFIG_HOME XDG_STATE_HOME
+export XDG_CONFIG_HOME XDG_STATE_HOME XDG_DATA_HOME
 export XDG_RUNTIME_DIR="/run/user/${UID}"
 export XDG_CACHE_HOME="${HOME}/.cache"
-export XDG_DATA_HOME="${HOME}/.local/share"
 export TERM=xterm-256color
 
 exports_dir="${XDG_CONFIG_HOME}/sh/exports.d"
@@ -102,6 +113,13 @@ alias mv='mv -iv'
 alias rm='rm -iv'
 
 alias wtf='sudo dmesg | less'
+
+aliases_dir="${XDG_CONFIG_HOME}/sh/aliases.d"
+if [[ -d ${aliases_dir} && -n $(ls -A ${aliases_dir}) ]]; then
+    for file in ${aliases_dir}/*; do
+        source ${file}
+    done
+fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile

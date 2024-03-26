@@ -11,7 +11,8 @@
 # non-interactive shells & external commands don't need this var.
 # Hence, we put it in your .zshrc file, since that's sourced for
 # each interactive shell, and don't export it.
-HISTFILE="${XDG_STATE_HOME}/zsh/history"
+unsetopt EXTENDED_HISTORY
+HISTFILE="${XDG_STATE_HOME}/sh/history"
 HISTSIZE=10000                                                    # Maximum events for internal history
 SAVEHIST=10000                                                    # Maximum events in history file
 LANG='en_US.UTF-8'

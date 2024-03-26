@@ -1,4 +1,4 @@
 # https://github.com/nvbn/thefuck
-if (( $+commands[thefuck] )); then
+if ! [ -x "$(command -v fuck)" ]; then
     eval $(thefuck --alias)
 fi

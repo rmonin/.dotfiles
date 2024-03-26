@@ -1,0 +1,2 @@
+export ASDF_CONFIG_FILE
+export ASDF_DATA_DIR

@@ -1,4 +1,3 @@
-#!/bin/bash
 # Used to output the battery level when working in a fullscreen Tmux
 # environment.
 
