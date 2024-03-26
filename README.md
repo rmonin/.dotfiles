@@ -27,7 +27,7 @@ To use these dotfiles, follow these simple steps:
 brew install stow
 git clone git@github.com:rmonin/dotfles.git ~/.dotfiles 
 cd ~/.dotfiles
-make
+./setup-ubuntu.sh
 ```
 
 ## Advanced
@@ -47,37 +47,30 @@ TARGETS
   help    - Show this help message
 ```
 
-### Install only selected packages
-
-You can provide son variables to adjust make behavior. vars are `PACKAGES`, `TARGET` and `IGNORE`. Check [Makefile](https://github.com/rmonin/dotfles/blob/main/Makefile) if needed
-
-```shell
-PACKAGES="zsh vim" make
-```
-
 ### Structure
 
 I Suggest to organize each content like below and launch `PACKAGES="configs" make`
 
 ```
 .dotfiles/
- ├─ bash/
- │  ├─ .bashrc
- │  ├─ .bash_profile
- │  ╰─ .bash_logout
- ├─ uzbl/
- │  ├─ .config/
- │  │  ╰─ uzbl/
- │  │     ╰─ [...some files]
- │  ╰─ .local/
- │     ╰─ share/
- │        ╰─ uzbl/
- │           ╰─ [...some files]
- ╰─ vim/
-    ├─ .vim/
-    │  ╰─ [...some files]
-    ╰─ .vimrc
+├─ bash/
+│  ├─ .bashrc
+│  ├─ .bash_profile
+│  ╰─ .bash_logout
+├─ uzbl/
+│  ├─ .config/
+│  │  ╰─ uzbl/
+│  │     ╰─ [...some files]
+│  ╰─ .local/
+│     ╰─ share/
+│        ╰─ uzbl/
+│           ╰─ [...some files]
+╰─ vim/
+   ├─ .vim/
+   │  ╰─ [...some files]
+   ╰─ .vimrc
 ```
+
 
 <details><summary><b>Other way</b></summary>
 
@@ -85,41 +78,39 @@ You can alternatively put everything messy on a configs _package_ (or whatever y
 
 ```
 .dotfiles/
- ╰─ configs/
-    ├─ .bashrc
-    ├─ .bash_profile
-    ├─ .bash_logout
-    ├─ uzbl/
-    │  ╰─ [...some files]
-    ├─ .local/
-    │  ╰─ share/
-    │     ╰─ uzbl/
-    │        ╰─ [...some files]
-    ├─ .vim/
-    │  ╰─ [...some files]
-    ╰─ .vimrc
+╰─ configs/
+   ├─ .bashrc
+   ├─ .bash_profile
+   ├─ .bash_logout
+   ├─ uzbl/
+   │  ╰─ [...some files]
+   ├─ .local/
+   │  ╰─ share/
+   │     ╰─ uzbl/
+   │        ╰─ [...some files]
+   ├─ .vim/
+   │  ╰─ [...some files]
+   ╰─ .vimrc
 ```
 
-According to Stow documentation, the Makefile manage also `--dotfiles` option, so you can also use _dot-_ prefix if you do not want hidden content on your project :
+**NOT WORKING** According to Stow documentation, the Makefile manage also `--dotfiles` option, so you can also use _dot-_ prefix if you do not want hidden content on your project :
 
 ```
 dotfles/
- ╰─ configs/
-    ├─ dot-bashrc
-    ├─ dot-bash_profile
-    ├─ dot-bash_logout
-    ├─ uzbl/
-    │  ╰─ [...some files]
-    ├─ dot-local/
-    │  ╰─ share/
-    │     ╰─ uzbl/
-    │        ╰─ [...some files]
-    ├─ dot-vim/
-    │  ╰─ [...some files]
-    ╰─ dot-vimrc
+╰─ configs/
+   ├─ dot-bashrc
+   ├─ dot-bash_profile
+   ├─ dot-bash_logout
+   ├─ uzbl/
+   │  ╰─ [...some files]
+   ├─ dot-local/
+   │  ╰─ share/
+   │     ╰─ uzbl/
+   │        ╰─ [...some files]
+   ├─ dot-vim/
+   │  ╰─ [...some files]
+   ╰─ dot-vimrc
 ```
-
-> **NOTICE:** `--dotfiles` is not working in addition to `--dir` and/or `--target`
 
 </details>
 
